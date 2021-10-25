@@ -57,16 +57,18 @@ namespace Tech_Project_5
                     
                     for (int i = 0; i < NumberofVotes; i++)
                     {
-                        for (int j = 0; j < NumberofCandidates; j++)
-                        {
-                            Console.WriteLine("Enter Vote");
-                            string Vote = Console.ReadLine();
-                            if (containsunicode(Vote))
+                        Console.WriteLine("Enter Vote");
+                         
+                        string Vote = Console.ReadLine();
+                            
+                        if (containsunicode(Vote))
                             {
                                 Console.WriteLine("Detected non ASCII input restarting program");
                                 throw new Exception();
                             }
-
+                        
+                        for (int j = 0; j < NumberofCandidates; j++)
+                        {                      
                             if (CandidateNames[j].Equals(Vote))
                             {
                                 CandidateVotes[j]++;
