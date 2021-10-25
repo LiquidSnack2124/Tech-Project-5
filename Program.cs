@@ -73,8 +73,11 @@ namespace Tech_Project_5
                             }
                         }
                     }
+                    
                     int Winner = 0;
+                    
                     bool Tie = false;
+                    
                     for (int i = 1; i < NumberofCandidates; i++)
                     {
                         if (CandidateVotes[i] > CandidateVotes[Winner])
@@ -87,12 +90,20 @@ namespace Tech_Project_5
                         {
                             Tie = true;
                         }
-
-
+                        
                     }
                     Console.WriteLine("The Winners Party is...");
-                    Console.WriteLine(CandidatePartys[Winner]);
+                    if (Tie)
+                    {
+                        Console.WriteLine("Tie");
+
+                    } else
+                    {
+                        Console.WriteLine(CandidatePartys[Winner]);
+                    }
+                    
                     Console.ReadLine();
+                    
                     Environment.Exit (0);
                 }
                 catch
